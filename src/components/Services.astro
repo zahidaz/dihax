@@ -1,0 +1,203 @@
+---
+---
+
+<section id="services" class="services">
+  <div class="services-container">
+    <div class="section-header">
+      <h2>Our Services</h2>
+      <p>Comprehensive cybersecurity and IT solutions tailored to your unique requirements</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card security">
+        <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <h3>Cybersecurity Services</h3>
+        <ul class="service-list">
+          <li>Web Application Penetration Testing</li>
+          <li>Mobile Security Assessment</li>
+          <li>Reverse Engineering</li>
+          <li>Malware Analysis</li>
+          <li>Security Audits & Compliance</li>
+          <li>Vulnerability Assessment</li>
+        </ul>
+      </div>
+
+      <div class="service-card support">
+        <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+          <line x1="8" y1="21" x2="16" y2="21"/>
+          <line x1="12" y1="17" x2="12" y2="21"/>
+        </svg>
+        <h3>IT Support & Infrastructure</h3>
+        <ul class="service-list">
+          <li>Network Design & Management</li>
+          <li>IT Infrastructure Support</li>
+          <li>System Administration</li>
+          <li>Technical Helpdesk</li>
+          <li>Cloud Solutions</li>
+          <li>IT Consulting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    padding: 80px 20px;
+    background: #fff;
+  }
+
+  .services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-header h2 {
+    font-size: 42px;
+    font-weight: 500;
+    margin: 0 0 16px;
+    color: #000;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .section-header p {
+    font-size: 18px;
+    color: #545454;
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .service-card {
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: #fff;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .service-card.security {
+    border-color: rgba(255, 87, 87, 0.3);
+    box-shadow: 0 4px 20px rgba(255, 87, 87, 0.1);
+  }
+
+  .service-card.security:hover {
+    box-shadow: 0 8px 32px rgba(255, 87, 87, 0.2);
+  }
+
+  .service-card.support {
+    border-color: rgba(14, 165, 233, 0.3);
+    box-shadow: 0 4px 20px rgba(14, 165, 233, 0.1);
+  }
+
+  .service-card.support:hover {
+    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.2);
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+  }
+
+  .service-card.security .service-icon {
+    color: #ff5757;
+  }
+
+  .service-card.support .service-icon {
+    color: #0EA5E9;
+  }
+
+  .service-card h3 {
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0 0 24px;
+    color: #000;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .service-list li {
+    padding: 12px 0;
+    color: #545454;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .service-list li:last-child {
+    border-bottom: none;
+  }
+
+  @media (max-width: 768px) {
+    .services {
+      padding: 60px 20px;
+    }
+
+    .section-header h2 {
+      font-size: 32px;
+    }
+
+    .section-header p {
+      font-size: 16px;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .service-card {
+      padding: 32px;
+    }
+
+    .service-card h3 {
+      font-size: 24px;
+    }
+
+    .service-list li {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .services {
+      padding: 40px 20px;
+    }
+
+    .section-header h2 {
+      font-size: 28px;
+    }
+
+    .service-card {
+      padding: 24px;
+    }
+
+    .service-icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+</style>

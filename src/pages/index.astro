@@ -1,0 +1,55 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="DIHAX provides expert cybersecurity and IT infrastructure support across British Columbia. Specializing in penetration testing, mobile & web security, reverse engineering, and comprehensive IT solutions." />
+		<meta name="keywords" content="cybersecurity BC, IT support British Columbia, penetration testing, mobile security, web security, reverse engineering, malware analysis, IT infrastructure" />
+		<meta property="og:title" content="DIHAX - Cybersecurity That Protects, IT Support That Empowers" />
+		<meta property="og:description" content="Expert cybersecurity and IT infrastructure support across British Columbia. Specializing in penetration testing, mobile & web security, and comprehensive IT solutions." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://dihax.com" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="stylesheet" href="/src/styles/fonts.css" />
+		<title>DIHAX - Cybersecurity That Protects, IT Support That Empowers</title>
+	</head>
+	<body>
+		<Navbar />
+		<main>
+			<Hero />
+			<Services />
+			<About />
+			<Contact />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: system-ui, -apple-system, sans-serif;
+		color: #000;
+		background: #fff;
+		min-height: 100vh;
+	}
+</style>

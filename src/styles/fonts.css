@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Inndam';
+  src: url('/fonts/inndam.woff2') format('woff2'),
+       url('/fonts/inndam.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
