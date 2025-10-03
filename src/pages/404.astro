@@ -1,0 +1,197 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="robots" content="noindex" />
+		<link rel="stylesheet" href="/src/styles/fonts.css" />
+		<title>404 - Page Not Found | DIHAX</title>
+	</head>
+	<body>
+		<Navbar />
+		<main class="error-page">
+			<div class="error-container">
+				<div class="error-content">
+					<h1 class="error-code">404</h1>
+					<h2>Page Not Found</h2>
+					<p>The page you're looking for doesn't exist or has been moved.</p>
+					<div class="error-actions">
+						<a href="/" class="btn btn-primary">Go Home</a>
+						<a href="/#contact" class="btn btn-secondary">Contact Us</a>
+					</div>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: system-ui, -apple-system, sans-serif;
+		color: #000;
+		background: #fff;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.error-page {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 140px 20px 80px;
+		min-height: 100vh;
+	}
+
+	.error-container {
+		max-width: 800px;
+		width: 100%;
+		text-align: center;
+	}
+
+	.error-content {
+		padding: 60px 40px;
+		background: linear-gradient(135deg, rgba(255, 87, 87, 0.05) 0%, rgba(14, 165, 233, 0.05) 100%);
+		border-radius: 24px;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+	}
+
+	.error-code {
+		font-size: 120px;
+		font-weight: 700;
+		background: linear-gradient(135deg, #ff5757 0%, #0EA5E9 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		margin: 0 0 24px;
+		font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+		line-height: 1;
+	}
+
+	.error-content h2 {
+		font-size: 32px;
+		font-weight: 500;
+		margin: 0 0 16px;
+		color: #000;
+		font-family: system-ui, -apple-system, sans-serif;
+	}
+
+	.error-content p {
+		font-size: 18px;
+		color: #545454;
+		margin: 0 0 40px;
+		font-family: system-ui, -apple-system, sans-serif;
+	}
+
+	.error-actions {
+		display: flex;
+		gap: 16px;
+		justify-content: center;
+	}
+
+	.btn {
+		padding: 16px 32px;
+		border-radius: 12px;
+		text-decoration: none;
+		font-weight: 400;
+		font-size: 16px;
+		font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+		transition: all 0.3s ease;
+		display: inline-block;
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		backdrop-filter: blur(10px);
+	}
+
+	.btn-primary {
+		background: rgba(255, 87, 87, 0.15);
+		color: #ff5757;
+		box-shadow: 0 4px 12px rgba(255, 87, 87, 0.2);
+	}
+
+	.btn-primary:hover {
+		background: rgba(255, 87, 87, 0.25);
+		box-shadow: 0 6px 16px rgba(255, 87, 87, 0.3);
+		transform: translateY(-2px);
+	}
+
+	.btn-secondary {
+		background: rgba(14, 165, 233, 0.15);
+		color: #0EA5E9;
+		box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+	}
+
+	.btn-secondary:hover {
+		background: rgba(14, 165, 233, 0.25);
+		box-shadow: 0 6px 16px rgba(14, 165, 233, 0.3);
+		transform: translateY(-2px);
+	}
+
+	@media (max-width: 768px) {
+		.error-page {
+			padding: 100px 20px 60px;
+		}
+
+		.error-content {
+			padding: 40px 28px;
+		}
+
+		.error-code {
+			font-size: 80px;
+		}
+
+		.error-content h2 {
+			font-size: 28px;
+		}
+
+		.error-content p {
+			font-size: 16px;
+			margin-bottom: 32px;
+		}
+
+		.error-actions {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.btn {
+			width: 100%;
+			max-width: 300px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.error-code {
+			font-size: 64px;
+		}
+
+		.error-content h2 {
+			font-size: 24px;
+		}
+
+		.error-content {
+			padding: 32px 20px;
+		}
+
+		.btn {
+			font-size: 14px;
+			padding: 14px 24px;
+		}
+	}
+</style>
