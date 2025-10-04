@@ -5,32 +5,35 @@
   <div class="services-container">
     <div class="section-header">
       <h2>Our Services</h2>
-      <p>Comprehensive IT support and cybersecurity solutions tailored to your unique requirements</p>
+      <p>Comprehensive IT support and cybersecurity solutions for modern businesses</p>
     </div>
 
     <div class="services-grid">
-      <div class="service-card support">
-        <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-          <line x1="8" y1="21" x2="16" y2="21"/>
-          <line x1="12" y1="17" x2="12" y2="21"/>
-        </svg>
-        <h3>IT Support & Infrastructure</h3>
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-number">01</div>
+          <h3>IT Support & Infrastructure</h3>
+        </div>
+        <p class="service-description">Complete IT infrastructure solutions, from network design to system administration.</p>
         <ul class="service-list">
           <li>Network Design & Management</li>
           <li>IT Infrastructure Support</li>
           <li>System Administration</li>
-          <li>Technical Helpdesk</li>
-          <li>Cloud Solutions</li>
-          <li>IT Consulting</li>
+          <li>Hardware Procurement & Setup</li>
+          <li>On-Site Help Desk Support</li>
+          <li>Remote Technical Support</li>
+          <li>Cloud Solutions & Migration</li>
+          <li>Server Management & Maintenance</li>
+          <li>IT Consulting & Strategy</li>
         </ul>
       </div>
 
-      <div class="service-card security">
-        <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        </svg>
-        <h3>Cybersecurity Services</h3>
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-number">02</div>
+          <h3>Cybersecurity Services</h3>
+        </div>
+        <p class="service-description">Expert security testing and assessment to protect your digital assets.</p>
         <ul class="service-list">
           <li>Web Application Penetration Testing</li>
           <li>Mobile Security Assessment</li>
@@ -46,31 +49,32 @@
 
 <style>
   .services {
-    padding: 80px 20px;
+    padding: 120px 40px;
     background: #fff;
   }
 
   .services-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
   }
 
   .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
   }
 
   .section-header h2 {
-    font-size: 42px;
-    font-weight: 500;
+    font-size: 48px;
+    font-weight: 600;
     margin: 0 0 16px;
     color: #000;
     font-family: system-ui, -apple-system, sans-serif;
+    letter-spacing: -1px;
   }
 
   .section-header p {
     font-size: 18px;
-    color: #545454;
+    color: #666;
     margin: 0;
     font-family: system-ui, -apple-system, sans-serif;
   }
@@ -78,58 +82,47 @@
   .services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 32px;
   }
 
   .service-card {
-    padding: 40px;
-    border-radius: 24px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    padding: 48px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.2s ease;
     background: #fff;
   }
 
   .service-card:hover {
-    transform: translateY(-8px);
+    border-color: #000;
   }
 
-  .service-card.security {
-    border-color: rgba(255, 87, 87, 0.3);
-    box-shadow: 0 4px 20px rgba(255, 87, 87, 0.1);
-  }
-
-  .service-card.security:hover {
-    box-shadow: 0 8px 32px rgba(255, 87, 87, 0.2);
-  }
-
-  .service-card.support {
-    border-color: rgba(14, 165, 233, 0.3);
-    box-shadow: 0 4px 20px rgba(14, 165, 233, 0.1);
-  }
-
-  .service-card.support:hover {
-    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.2);
-  }
-
-  .service-icon {
-    width: 48px;
-    height: 48px;
+  .service-header {
     margin-bottom: 20px;
   }
 
-  .service-card.security .service-icon {
-    color: #ff5757;
-  }
-
-  .service-card.support .service-icon {
-    color: #0EA5E9;
+  .service-number {
+    font-size: 14px;
+    font-weight: 600;
+    color: #999;
+    margin-bottom: 12px;
+    font-family: system-ui, -apple-system, sans-serif;
   }
 
   .service-card h3 {
-    font-size: 28px;
-    font-weight: 500;
-    margin: 0 0 24px;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
     color: #000;
+    font-family: system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.5px;
+  }
+
+  .service-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0 0 24px;
     font-family: system-ui, -apple-system, sans-serif;
   }
 
@@ -140,24 +133,32 @@
   }
 
   .service-list li {
-    padding: 12px 0;
-    color: #545454;
-    font-size: 16px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+    color: #666;
+    font-size: 15px;
     font-family: system-ui, -apple-system, sans-serif;
+    position: relative;
+    padding-left: 20px;
   }
 
-  .service-list li:last-child {
-    border-bottom: none;
+  .service-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #999;
   }
 
   @media (max-width: 768px) {
     .services {
-      padding: 60px 20px;
+      padding: 80px 24px;
+    }
+
+    .section-header {
+      margin-bottom: 60px;
     }
 
     .section-header h2 {
-      font-size: 32px;
+      font-size: 36px;
     }
 
     .section-header p {
@@ -166,7 +167,7 @@
 
     .services-grid {
       grid-template-columns: 1fr;
-      gap: 30px;
+      gap: 24px;
     }
 
     .service-card {
@@ -174,30 +175,33 @@
     }
 
     .service-card h3 {
-      font-size: 24px;
+      font-size: 22px;
+    }
+
+    .service-description {
+      font-size: 15px;
     }
 
     .service-list li {
-      font-size: 15px;
+      font-size: 14px;
     }
   }
 
   @media (max-width: 480px) {
     .services {
-      padding: 40px 20px;
+      padding: 60px 20px;
     }
 
     .section-header h2 {
-      font-size: 28px;
+      font-size: 32px;
     }
 
     .service-card {
       padding: 24px;
     }
 
-    .service-icon {
-      width: 40px;
-      height: 40px;
+    .service-card h3 {
+      font-size: 20px;
     }
   }
 </style>
