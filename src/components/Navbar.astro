@@ -14,7 +14,7 @@
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
 
@@ -33,82 +33,84 @@
 <style>
   .navbar {
     position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 1200px;
-    width: calc(100% - 40px);
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 32px;
-    background: linear-gradient(135deg, rgba(255, 87, 87, 0.15), rgba(14, 165, 233, 0.15));
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50px;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     z-index: 1000;
-    box-sizing: border-box;
+    transition: all 0.3s ease;
   }
 
   .logo {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
     text-decoration: none;
   }
 
   .logo-icon {
-    height: 32px;
+    height: 28px;
     width: auto;
   }
 
   .logo-text {
-    font-family: 'Inter', 'Roboto Condensed', system-ui, sans-serif;
-    font-size: 24px;
-    font-weight: 700;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
     letter-spacing: -0.5px;
     color: #000;
   }
 
   .nav-links {
     display: flex;
-    gap: 32px;
+    gap: 8px;
     list-style: none;
     margin: 0;
     padding: 0;
+    align-items: center;
   }
 
   .nav-links a {
-    color: #545454;
+    color: #666;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
-    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
-    transition: color 0.3s ease;
-    padding: 8px 12px;
+    font-family: system-ui, -apple-system, sans-serif;
+    transition: color 0.2s ease;
+    padding: 8px 16px;
+    border-radius: 8px;
     display: inline-block;
   }
 
-  .nav-links a:hover,
-  .nav-links a:focus {
-    color: #ff5757;
-    outline: none;
+  .nav-links a:hover {
+    color: #000;
   }
 
-  .nav-links a:focus-visible {
-    outline: 2px solid #ff5757;
-    outline-offset: 4px;
-    border-radius: 4px;
+  .nav-links a.nav-cta {
+    background: #000;
+    color: #fff;
+    margin-left: 8px;
+  }
+
+  .nav-links a.nav-cta:hover {
+    background: #333;
+    color: #fff;
   }
 
   .hamburger {
     display: none;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 12px;
+    padding: 8px;
     z-index: 1001;
   }
 
@@ -121,7 +123,7 @@
   }
 
   .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+    transform: rotate(45deg) translate(7px, 7px);
   }
 
   .hamburger.active span:nth-child(2) {
@@ -129,31 +131,20 @@
   }
 
   .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+    transform: rotate(-45deg) translate(7px, -7px);
   }
 
   @media (max-width: 768px) {
     .navbar {
-      top: 0;
-      left: 0;
-      right: 0;
-      transform: none;
-      max-width: 100%;
-      width: 100%;
-      border-radius: 0;
-      padding: 16px 20px;
-    }
-
-    .logo {
-      flex-shrink: 0;
+      padding: 16px 24px;
     }
 
     .logo-icon {
-      height: 28px;
+      height: 24px;
     }
 
     .logo-text {
-      font-size: 20px;
+      font-size: 18px;
     }
 
     .hamburger {
@@ -165,16 +156,15 @@
       top: 0;
       right: -100%;
       height: 100vh;
-      width: 70%;
-      max-width: 300px;
+      width: 280px;
       background: #fff;
-      border-left: 1px solid rgba(0, 0, 0, 0.1);
       flex-direction: column;
       gap: 0;
       padding: 80px 24px 24px;
-      box-shadow: -4px 0 16px rgba(0, 0, 0, 0.15);
+      box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
       transition: right 0.3s ease;
       z-index: 1000;
+      align-items: stretch;
     }
 
     .nav-links.active {
@@ -187,24 +177,26 @@
 
     .nav-links a {
       font-size: 16px;
-      padding: 16px 12px;
+      padding: 16px;
       display: block;
       width: 100%;
-      border-bottom: 1px solid #f0f0f0;
+      border-radius: 0;
+    }
+
+    .nav-links a.nav-cta {
+      margin-left: 0;
+      margin-top: 8px;
+      border-radius: 8px;
     }
   }
 
   @media (max-width: 480px) {
-    .logo-icon {
-      height: 24px;
-    }
-
-    .logo-text {
-      font-size: 18px;
+    .navbar {
+      padding: 14px 20px;
     }
 
     .nav-links {
-      width: 80%;
+      width: 240px;
     }
   }
 </style>
