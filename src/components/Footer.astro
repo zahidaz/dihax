@@ -1,140 +1,108 @@
 ---
+import MapleLeaf from './MapleLeaf.astro';
+
+const email = 'contact@dihax.com';
+const year = new Date().getFullYear();
+
+const links = [
+	{ href: '/#audiences', label: 'Who we help' },
+	{ href: '/#ai', label: 'AI threats' },
+	{ href: '/#services', label: 'Services' },
+	{ href: '/#process', label: 'How it works' },
+	{ href: '/#contact', label: 'Contact' },
+];
 ---
 
 <footer class="footer">
-  <div class="footer-container">
-    <div class="footer-content">
-      <div class="footer-left">
-        <div class="footer-brand">DIHAX</div>
-        <p class="footer-tagline">IT Support That Empowers, Cybersecurity That Protects</p>
-      </div>
-      <div class="footer-right">
-        <div class="footer-links">
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-          <a href="https://www.linkedin.com/company/dihax/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 DIHAX. All rights reserved.</p>
-    </div>
-  </div>
+	<div class="shell footer-inner">
+		<div class="footer-brand">
+			<img src="/logo-white-transparent.png" alt="DIHAX" height="30" />
+			<p>Personal cybersecurity & privacy advisory for individuals, families and small business.</p>
+			<a href={`mailto:${email}`} class="footer-email">{email}</a>
+			<p class="footer-location"><MapleLeaf size={15} /> Based in Canada</p>
+		</div>
+		<nav class="footer-links">
+			{links.map((link) => <a href={link.href}>{link.label}</a>)}
+		</nav>
+	</div>
+	<div class="shell footer-bottom">
+		<span>© {year} DIHAX</span>
+	</div>
 </footer>
 
 <style>
-  .footer {
-    background: #000;
-    color: #fff;
-    padding: 60px 40px 40px;
-  }
+	.footer {
+		background: var(--ink);
+		color: #fff;
+		padding: 72px 0 32px;
+	}
 
-  .footer-container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+	.footer-inner {
+		display: flex;
+		justify-content: space-between;
+		gap: 48px;
+		flex-wrap: wrap;
+		padding-bottom: 48px;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+	}
 
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
+	.footer-brand {
+		max-width: 360px;
+	}
 
-  .footer-left {
-    max-width: 400px;
-  }
+	.footer-brand p {
+		margin-top: 18px;
+		font-size: 15px;
+		color: rgba(255, 255, 255, 0.6);
+	}
 
-  .footer-brand {
-    font-size: 20px;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 12px;
-    font-family: system-ui, -apple-system, sans-serif;
-    letter-spacing: -0.5px;
-  }
+	.footer-email {
+		display: inline-block;
+		margin-top: 16px;
+		font-family: var(--mono);
+		font-size: 15px;
+		color: #fff;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	}
 
-  .footer-tagline {
-    font-size: 14px;
-    color: #666;
-    margin: 0;
-    line-height: 1.6;
-    font-family: system-ui, -apple-system, sans-serif;
-  }
+	.footer-email:hover {
+		border-color: var(--red);
+	}
 
-  .footer-right {
-    display: flex;
-    gap: 40px;
-  }
+	.footer-location {
+		margin-top: 18px;
+		display: flex;
+		align-items: center;
+		gap: 7px;
+		font-size: 14px;
+		color: rgba(255, 255, 255, 0.6);
+	}
 
-  .footer-links {
-    display: flex;
-    gap: 32px;
-    align-items: center;
-  }
+	.footer-links {
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+	}
 
-  .footer-links a {
-    color: #999;
-    text-decoration: none;
-    font-size: 14px;
-    font-family: system-ui, -apple-system, sans-serif;
-    transition: color 0.2s ease;
-  }
+	.footer-links a {
+		font-size: 15px;
+		color: rgba(255, 255, 255, 0.7);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
 
-  .footer-links a:hover {
-    color: #fff;
-  }
+	.footer-links a:hover {
+		color: #fff;
+	}
 
-  .footer-bottom {
-    padding-top: 24px;
-    text-align: center;
-  }
-
-  .footer-bottom p {
-    font-size: 14px;
-    color: #666;
-    margin: 0;
-    font-family: system-ui, -apple-system, sans-serif;
-  }
-
-  @media (max-width: 768px) {
-    .footer {
-      padding: 60px 24px 40px;
-    }
-
-    .footer-content {
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    .footer-right {
-      width: 100%;
-    }
-
-    .footer-links {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .footer {
-      padding: 40px 20px 32px;
-    }
-
-    .footer-content {
-      gap: 32px;
-    }
-
-    .footer-brand {
-      font-size: 18px;
-    }
-
-    .footer-tagline {
-      font-size: 13px;
-    }
-  }
+	.footer-bottom {
+		display: flex;
+		justify-content: space-between;
+		gap: 16px;
+		flex-wrap: wrap;
+		margin-top: 32px;
+		font-size: 13px;
+		color: rgba(255, 255, 255, 0.45);
+	}
 </style>

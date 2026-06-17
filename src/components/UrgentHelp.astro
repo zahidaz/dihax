@@ -1,0 +1,142 @@
+---
+import AlertIcon from './AlertIcon.astro';
+
+const email = 'contact@dihax.com';
+const subject = 'URGENT - I think I have been compromised';
+
+const signs = [
+	'You’ve been locked out of an account',
+	'Friends got messages you never sent',
+	'Unexpected password-reset emails',
+	'Money or crypto has gone missing',
+	'A device is behaving strangely',
+	'Someone seems to know your movements',
+];
+---
+
+<section id="urgent" class="urgent">
+	<div class="shell urgent-inner">
+		<div class="urgent-copy">
+			<p class="eyebrow">Compromised right now?</p>
+			<h2>Think you’ve been hacked? Let’s move fast.</h2>
+			<p>
+				The faster we move, the more we can contain. Reach out and we’ll prioritise you, help
+				you lock attackers out, recover your accounts, and figure out what happened. No judgement,
+				fully confidential.
+			</p>
+			<a href={`mailto:${email}?subject=${encodeURIComponent(subject)}`} class="btn btn-urgent">
+				Get urgent help
+			</a>
+			<p class="urgent-note">Put <strong>URGENT</strong> in your subject line and we reply fast.</p>
+		</div>
+		<div class="urgent-signs">
+			<p class="signs-head"><mark>Signs you may be compromised</mark></p>
+			<ul>
+				{signs.map((sign) => (
+					<li>
+						<AlertIcon size={15} />
+						{sign}
+					</li>
+				))}
+			</ul>
+		</div>
+	</div>
+</section>
+
+<style>
+	.urgent {
+		background: rgba(229, 52, 43, 0.04);
+		border-top: 1px solid rgba(229, 52, 43, 0.2);
+		border-bottom: 1px solid rgba(229, 52, 43, 0.2);
+	}
+
+	.urgent-inner {
+		display: grid;
+		grid-template-columns: 1.1fr 0.9fr;
+		gap: 56px;
+		align-items: center;
+	}
+
+	.urgent .eyebrow {
+		color: var(--red);
+	}
+
+	.urgent-copy h2 {
+		font-size: clamp(28px, 4vw, 40px);
+		font-weight: 600;
+		line-height: 1.12;
+		letter-spacing: -0.02em;
+	}
+
+	.urgent-copy > p {
+		margin: 18px 0 28px;
+		font-size: 18px;
+		color: var(--muted);
+		max-width: 520px;
+	}
+
+	.btn-urgent {
+		color: #fff;
+		background: var(--red);
+	}
+
+	.btn-urgent:hover {
+		background: var(--ink);
+		transform: translateY(-2px);
+	}
+
+	.urgent-note {
+		margin-top: 16px;
+		font-size: 14px;
+		color: var(--muted);
+	}
+
+	.urgent-note strong {
+		font-family: var(--mono);
+		color: var(--red);
+	}
+
+	.urgent-signs {
+		padding: 28px 32px;
+		background: #fff;
+		border: 1px solid var(--line);
+		border-radius: var(--radius-lg);
+	}
+
+	.signs-head {
+		font-family: var(--mono);
+		font-size: 12px;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+
+	.signs-head mark {
+		background: rgba(213, 43, 30, 0.16);
+		color: var(--ink);
+		padding: 3px 8px;
+		border-radius: 3px;
+	}
+
+	.urgent-signs ul {
+		margin-top: 20px;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+	}
+
+	.urgent-signs li {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		font-size: 15px;
+	}
+
+	@media (max-width: 900px) {
+		.urgent-inner {
+			grid-template-columns: 1fr;
+			gap: 36px;
+		}
+	}
+</style>

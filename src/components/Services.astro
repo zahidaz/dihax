@@ -1,194 +1,119 @@
 ---
+const groups = [
+	{
+		label: 'Protect',
+		title: 'Lock down what you already have',
+		items: [
+			'Phones, laptops, and tablets set up securely',
+			'Home Wi-Fi, router, and smart devices',
+			'Passwords, two-factor, and breach monitoring',
+			'Privacy cleanup and data-broker removal',
+		],
+	},
+	{
+		label: 'Recover',
+		title: 'Handle the worst case, calmly',
+		items: [
+			'Rapid triage when you’ve been compromised',
+			'Account and identity recovery',
+			'Scam, fraud, and phishing response',
+			'Stalkerware and unwanted-tracking checks',
+		],
+	},
+	{
+		label: 'Stay ahead',
+		title: 'Keep up as threats change',
+		items: [
+			'AI scam and deepfake defense',
+			'Training for you, your family, or your team',
+			'Small business security and privacy compliance',
+			'Ongoing advisory and regular check-ins',
+		],
+	},
+];
 ---
 
-<section id="services" class="services">
-  <div class="services-container">
-    <div class="section-header">
-      <h2>Our Services</h2>
-      <p>Comprehensive IT support and cybersecurity solutions for modern businesses</p>
-    </div>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-header">
-          <h3>IT Support & Infrastructure</h3>
-        </div>
-        <p class="service-description">Complete IT infrastructure solutions, from network design to system administration.</p>
-        <ul class="service-list">
-          <li>Help Desk & Technical Support</li>
-          <li>System Administration & Maintenance</li>
-          <li>Network Design & Management</li>
-          <li>Cloud Solutions & Migration</li>
-          <li>Server Infrastructure & DevOps</li>
-          <li>Hardware Procurement & Setup</li>
-          <li>IT Consulting & Strategy</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-header">
-          <h3>Cybersecurity Services</h3>
-        </div>
-        <p class="service-description">Expert security testing and assessment to protect your digital assets.</p>
-        <ul class="service-list">
-          <li>Web Application Penetration Testing</li>
-          <li>Mobile Application Security (iOS & Android)</li>
-          <li>Vulnerability Assessment & OWASP Testing</li>
-          <li>Security Audits & Compliance</li>
-          <li>Reverse Engineering & Malware Analysis</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<section id="services">
+	<div class="shell">
+		<div class="section-head">
+			<h2>What we actually help with.</h2>
+			<p>Start with a one-off assessment or stay on for ongoing support. The work falls into three areas.</p>
+		</div>
+		<div class="grid">
+			{
+				groups.map((group) => (
+					<article class="group">
+						<span class="label">{group.label}</span>
+						<h3>{group.title}</h3>
+						<ul>
+							{group.items.map((item) => (
+								<li>{item}</li>
+							))}
+						</ul>
+					</article>
+				))
+			}
+		</div>
+	</div>
 </section>
 
 <style>
-  .services {
-    padding: 120px 40px;
-    background: #fff;
-  }
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 24px;
+	}
 
-  .services-container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+	.group {
+		padding: 32px;
+		border: 1px solid var(--line);
+		border-radius: var(--radius-lg);
+	}
 
-  .section-header {
-    text-align: center;
-    margin-bottom: 80px;
-  }
+	.label {
+		font-family: var(--mono);
+		font-size: 12px;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--red);
+	}
 
-  .section-header h2 {
-    font-size: 48px;
-    font-weight: 600;
-    margin: 0 0 16px;
-    color: #000;
-    font-family: system-ui, -apple-system, sans-serif;
-    letter-spacing: -1px;
-  }
+	.group h3 {
+		margin-top: 14px;
+		font-size: 21px;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+	}
 
-  .section-header p {
-    font-size: 18px;
-    color: #666;
-    margin: 0;
-    font-family: system-ui, -apple-system, sans-serif;
-  }
+	.group ul {
+		margin-top: 22px;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+	}
 
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
+	.group li {
+		position: relative;
+		padding-left: 22px;
+		font-size: 15px;
+		color: var(--muted);
+	}
 
-  .service-card {
-    padding: 48px;
-    border-radius: 12px;
-    border: 1px solid #e0e0e0;
-    transition: all 0.2s ease;
-    background: #fff;
-  }
+	.group li::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 9px;
+		width: 6px;
+		height: 6px;
+		border-radius: 1px;
+		background: var(--ink);
+	}
 
-  .service-card:hover {
-    border-color: #000;
-  }
-
-  .service-header {
-    margin-bottom: 20px;
-  }
-
-  .service-card h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin: 0;
-    color: #000;
-    font-family: system-ui, -apple-system, sans-serif;
-    letter-spacing: -0.5px;
-  }
-
-  .service-description {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #666;
-    margin: 0 0 24px;
-    font-family: system-ui, -apple-system, sans-serif;
-  }
-
-  .service-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .service-list li {
-    padding: 10px 0;
-    color: #666;
-    font-size: 15px;
-    font-family: system-ui, -apple-system, sans-serif;
-    position: relative;
-    padding-left: 20px;
-  }
-
-  .service-list li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: #999;
-  }
-
-  @media (max-width: 768px) {
-    .services {
-      padding: 80px 24px;
-    }
-
-    .section-header {
-      margin-bottom: 60px;
-    }
-
-    .section-header h2 {
-      font-size: 36px;
-    }
-
-    .section-header p {
-      font-size: 16px;
-    }
-
-    .services-grid {
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-
-    .service-card {
-      padding: 32px;
-    }
-
-    .service-card h3 {
-      font-size: 22px;
-    }
-
-    .service-description {
-      font-size: 15px;
-    }
-
-    .service-list li {
-      font-size: 14px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .services {
-      padding: 60px 20px;
-    }
-
-    .section-header h2 {
-      font-size: 32px;
-    }
-
-    .service-card {
-      padding: 24px;
-    }
-
-    .service-card h3 {
-      font-size: 20px;
-    }
-  }
+	@media (max-width: 900px) {
+		.grid {
+			grid-template-columns: 1fr;
+		}
+	}
 </style>

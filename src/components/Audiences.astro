@@ -1,0 +1,129 @@
+---
+const email = 'contact@dihax.com';
+
+const audiences = [
+	{
+		title: 'I want to protect myself & my family',
+		body: 'You want fewer worries about hackers, scams and snooping. We assess your devices, home network, accounts and apps, then give you a clear plan you can actually follow.',
+		points: ['Device & home network checkup', 'Passwords, MFA & breach monitoring', 'Family & kids online safety'],
+		subject: 'I want to be safer',
+	},
+	{
+		title: 'I am high-profile & need discretion',
+		body: 'Executives, founders, public figures and their households face targeted threats. We reduce your exposure and protect the people around you, quietly and confidentially.',
+		points: ['Digital footprint & exposure audit', 'Household & family protection', 'Doxxing & impersonation removal'],
+		subject: 'Confidential advisory enquiry',
+	},
+	{
+		title: 'We run a small business',
+		body: 'Protect your team, your customers, and your reputation without an IT department. We cover the security basics and help you meet your privacy obligations.',
+		points: ['Email, devices & staff training', 'Privacy law & compliance (PIPEDA, Law 25)', 'Backups & ransomware readiness'],
+		subject: 'Small business enquiry',
+	},
+];
+---
+
+<section id="audiences">
+	<div class="shell">
+		<div class="section-head">
+			<h2>Which one sounds like you?</h2>
+			<p>Most people reach out in one of these situations.</p>
+		</div>
+		<div class="grid">
+			{
+				audiences.map((a) => (
+					<article class="card">
+						<h3>{a.title}</h3>
+						<p>{a.body}</p>
+						<ul>
+							{a.points.map((point) => (
+								<li>{point}</li>
+							))}
+						</ul>
+						<a href={`mailto:${email}?subject=${encodeURIComponent(a.subject)}`} class="card-link">Get help →</a>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 24px;
+	}
+
+	.card {
+		display: flex;
+		flex-direction: column;
+		padding: 32px;
+		background: var(--bg-soft);
+		border: 1px solid var(--line);
+		border-radius: var(--radius-lg);
+		transition: transform 0.25s ease, box-shadow 0.25s ease;
+	}
+
+	.card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 16px 40px rgba(10, 10, 10, 0.08);
+	}
+
+	h3 {
+		font-size: 22px;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+	}
+
+	.card p {
+		margin-top: 12px;
+		color: var(--muted);
+		font-size: 15px;
+	}
+
+	.card ul {
+		margin-top: 20px;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.card li {
+		position: relative;
+		padding-left: 24px;
+		font-size: 15px;
+	}
+
+	.card li::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 9px;
+		width: 6px;
+		height: 6px;
+		border-radius: 1px;
+		background: var(--ink);
+	}
+
+	.card-link {
+		margin-top: auto;
+		padding-top: 24px;
+		font-family: var(--mono);
+		font-size: 14px;
+		text-decoration: none;
+		color: var(--ink);
+		transition: color 0.2s ease;
+	}
+
+	.card-link:hover {
+		color: var(--red);
+	}
+
+	@media (max-width: 900px) {
+		.grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
