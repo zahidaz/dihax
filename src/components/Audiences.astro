@@ -1,24 +1,19 @@
 ---
-const email = 'contact@dihax.com';
-
 const audiences = [
 	{
 		title: 'I want to protect myself & my family',
 		body: 'You want fewer worries about hackers, scams and snooping. We assess your devices, home network, accounts and apps, then give you a clear plan you can actually follow.',
 		points: ['Device & home network checkup', 'Passwords, MFA & breach monitoring', 'Family & kids online safety'],
-		subject: 'I want to be safer',
 	},
 	{
 		title: 'I am high-profile & need discretion',
 		body: 'Executives, founders, public figures and their households face targeted threats. We reduce your exposure and protect the people around you, quietly and confidentially.',
 		points: ['Digital footprint & exposure audit', 'Household & family protection', 'Doxxing & impersonation removal'],
-		subject: 'Confidential advisory enquiry',
 	},
 	{
 		title: 'We run a small business',
 		body: 'Protect your team, your customers, and your reputation without an IT department. We cover the security basics and help you meet your privacy obligations.',
 		points: ['Email, devices & staff training', 'Privacy law & compliance (PIPEDA, Law 25)', 'Backups & ransomware readiness'],
-		subject: 'Small business enquiry',
 	},
 ];
 ---
@@ -40,7 +35,7 @@ const audiences = [
 								<li>{point}</li>
 							))}
 						</ul>
-						<a href={`mailto:${email}?subject=${encodeURIComponent(a.subject)}`} class="card-link">Get help →</a>
+						<a href="/#contact" class="card-link">Get help →</a>
 					</article>
 				))
 			}

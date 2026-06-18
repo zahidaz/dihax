@@ -1,9 +1,6 @@
 ---
 import AlertIcon from './AlertIcon.astro';
 
-const email = 'contact@dihax.com';
-const subject = 'URGENT - I think I have been compromised';
-
 const signs = [
 	'You’ve been locked out of an account',
 	'Friends got messages you never sent',
@@ -17,17 +14,14 @@ const signs = [
 <section id="urgent" class="urgent">
 	<div class="shell urgent-inner">
 		<div class="urgent-copy">
-			<p class="eyebrow">Compromised right now?</p>
 			<h2>Think you’ve been hacked? Let’s move fast.</h2>
 			<p>
 				The faster we move, the more we can contain. Reach out and we’ll prioritise you, help
 				you lock attackers out, recover your accounts, and figure out what happened. No judgement,
 				fully confidential.
 			</p>
-			<a href={`mailto:${email}?subject=${encodeURIComponent(subject)}`} class="btn btn-urgent">
-				Get urgent help
-			</a>
-			<p class="urgent-note">Put <strong>URGENT</strong> in your subject line and we reply fast.</p>
+			<a href="/#contact" class="btn btn-urgent">Get urgent help</a>
+			<p class="urgent-note">Mark your message <strong>URGENT</strong> and we reply fast.</p>
 		</div>
 		<div class="urgent-signs">
 			<p class="signs-head"><mark>Signs you may be compromised</mark></p>
@@ -55,10 +49,6 @@ const signs = [
 		grid-template-columns: 1.1fr 0.9fr;
 		gap: 56px;
 		align-items: center;
-	}
-
-	.urgent .eyebrow {
-		color: var(--red);
 	}
 
 	.urgent-copy h2 {

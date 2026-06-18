@@ -1,10 +1,10 @@
 ---
-const checks = [
-	'Your accounts, passwords, and logins',
-	'Your phones, laptops, and devices',
-	'Your home or office network',
-	'What strangers can find about you online',
-	'Your family or your team',
+const services = [
+	'Device & account security',
+	'Home & office network setup',
+	'Privacy & data removal',
+	'Compromise recovery & response',
+	'Training & ongoing advisory',
 ];
 ---
 
@@ -25,9 +25,9 @@ const checks = [
 					</div>
 				</div>
 				<aside class="brief-scope reveal" style="--i: 2">
-					<p class="scope-label"><mark>What we review</mark></p>
+					<p class="scope-label"><mark>Our services</mark></p>
 					<ul>
-						{checks.map((item) => <li>{item}</li>)}
+						{services.map((item) => <li>{item}</li>)}
 						<li class="more">and more, tailored to you</li>
 					</ul>
 				</aside>
